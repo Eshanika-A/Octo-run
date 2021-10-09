@@ -65,6 +65,12 @@ drawSprites();
      foods();
      obstacles();
    
+    back.velocityX=-3
+
+     if(back.x<100) {
+        back.x=400
+     }
+   
     ground.velocityX = -(4+score*1.5/100);
     
    score = score + Math.round(getFrameRate()/60);
@@ -121,6 +127,7 @@ drawSprites();
   if (gameState === END){
   
     ground.velocityX = 0;
+     back.velocityX = 0;
     
     obstacleGroup.setVelocityXEach(0);
     obstacleGroup.setLifetimeEach(-1);
